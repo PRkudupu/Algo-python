@@ -20,8 +20,21 @@ def remove_dup(dup_list):
     return new_list   
 
 
-# In[81]:
+# In[7]:
+
+
+def remove_dup(dup_list):
+    return (list(set(dup_list)))
+
+
+# In[8]:
 
 
 remove_dup([1,2,2,4,4])
+
+
+# In[ ]:
+
+
+
 
