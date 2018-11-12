@@ -27,24 +27,25 @@ def move_zeros(nums):
 move_zeros(ar)   
 
 
-# In[ ]:
+# In[2]:
 
 
-Traverse and swap last 0 and non 0
-ar =[0,0,4,7,0,10] def move_zeros(nums): last0=0;
-#move the non zero numbers to the left
-for i in range(0,len(nums)):
-    if(nums[i]!=0):
-        print("nums[last0] {}".format(nums[last0]))
-        nums[i],nums[last0]=nums[last0],nums[i]
-        print("nums[i] {}".format(nums[i]))
-        print("nums[last0] {}".format(nums[last0]))
-        last0+=1
-        print(last0)
-        print("array {}".format(nums))
-
-return nums
-move_zeros(ar) 
+# move
+def move_zeros(nums):
+    last0=0
+    for i in range(0,len(nums)):
+        if(nums[i]!=0):
+            print("i",i)
+            print("nums[i]",nums[i])
+            print("nums[last0]",nums[last0])
+            print("[last0]",last0)
+            nums[i],nums[last0]=nums[last0],nums[i]
+            print("after nums[i]",nums[i])
+            print("after nums[last0]",nums[last0])
+            print("nums",nums)
+            last0+=1
+    return nums
+print(move_zeros([0,1,0,10]))
 
 
 # In[ ]:
