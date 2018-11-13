@@ -18,15 +18,19 @@
 # <b>Output</b> : True
 #         
 
-# In[2]:
+# In[40]:
 
 
 def check_prime(num):
-    mid = int(num/2)
-    for i in range(2,mid):
-        if num % 2 == 0:
+    for i in range(2,num):
+        if num % i == 0:
             return False
-        else:
-            return True
-print(check_prime(7))
+    return True
+print(check_prime(4))
+
+
+# In[ ]:
+
+
+
 
