@@ -7,7 +7,20 @@
 # 
 # <b> Ex [1,4,6,3,1] should return 1 </b>
 
-# In[27]:
+# In[3]:
+
+
+def dup_odd_num(num):
+    count=0
+    for i in range(len(num)):
+        if num[i] % 2 != 0:
+            count+=1
+        if count > 1: return num[i]
+    return False
+print(dup_odd_num([1,3,2,3]))
+
+
+# In[ ]:
 
 
 def dup_odd_num(num):
@@ -25,16 +38,4 @@ def dup_odd_num(num):
 
 
 print(dup_odd_num([3,4,6,8,]))
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
 
