@@ -11,16 +11,32 @@
 
 # #### Loops
 
-# In[12]:
+# In[5]:
 
 
 def gcd(x,y):
     if x > y:
-        small=x
+        small=y
     else:
         small=x
     for i in range(1,small+1):
         if(x % i == 0) and (y % i ==0):
+            gcd=i
+    return gcd
+print(gcd(18,27))
+
+
+# In[6]:
+
+
+def gcd(x,y):
+    small=min(x,y)
+    print("x",x)
+    print("y",y)
+    print("small",small)
+    for i in range(1,small+1):
+        if x % i == 0 and y % i == 0:
+            print("i",i)
             gcd=i
     return gcd
 print(gcd(18,27))
