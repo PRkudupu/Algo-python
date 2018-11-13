@@ -27,22 +27,25 @@ max_array_fn([20,40,60,80,100])
 
 # <b>O log n</b>
 
-# In[9]:
+# In[5]:
 
 
-def max_array_div(arr):
-    max_num,max_so_far,head,tail =arr[0],0,0,len(arr)-1
-    while head <=tail:
-        if arr[head] > arr[tail]:
-            max_so_far =arr[head]
-        else:
-            max_so_far =arr[tail]
-        if max_so_far > max_num:
-            max_num=max_so_far
+def mx(ls):
+    max_num=0
+    m=0
+    head=0
+    tail=len(ls)-1
+    while head <= tail:
+        if ls[head] >=ls[tail]:
+            m=ls[head]
+        elif ls[tail] >=ls[head]:
+            m=ls[tail]
         head+=1
         tail-=1
+        if m > max_num:
+            max_num=m
     return max_num
-max_array_div([20,40,60,80,100])        
+print(mx([1,500,10,20000]))       
 
 
 # In[ ]:
