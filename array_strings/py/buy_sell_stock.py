@@ -29,20 +29,18 @@ print(m)
 # ## Time Complexity O(n)
 # ## Space Complexity 0(1)
 
-# In[25]:
+# In[3]:
 
 
-stocks =[7,1,5,2,4]
-
-def buy_sell_once_ef(s):
+def buy_sell_once_ef(ls):
     max_profit=0
     min_price=stocks[0]
-    for price in range(len(stocks)-1):
-        min_price = min(min_price,price)
-        profit    =(price-min_price)
+    for price in range(len(ls)-1):
+        min_price = min(min_price,ls[price])
+        profit    = ls[price]-min_price
         max_profit=max(profit,max_profit)
     return max_profit
-m=buy_sell_once(stocks)
+m=buy_sell_once_ef([5,10,10])
 print(m)
 
 

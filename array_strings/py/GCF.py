@@ -56,14 +56,14 @@ print(gcd(18,27))
 
 # #### Recursion
 
-# In[17]:
+# In[12]:
 
 
-def gcd(a,b):
-    if(b == 0):
-        return a
+def gcd(x,y):
+    if(y == 0):
+        return x
     else:
-        return gcd(b,a%b)
+        return gcd(y,x % y)
 print(gcd(18,27))
 
 
