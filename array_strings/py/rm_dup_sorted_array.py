@@ -13,18 +13,17 @@
 # 
 # It doesn't matter what you leave beyond the returned length.
 
-# In[2]:
+# In[1]:
 
 
-def remove_dup_sorted(A):
-    if not A:
-        return 0
-    newTail=0
-    for i in range(1,len(A)):
-         if A[i] != A[newTail]:
-            newTail +=1
-            A[newTail]=A[i]
-    return newTail +1
+def dup(ls):
+    pos=1
+    for i in range(1,len(ls)):
+        if ls[i]!=ls[i-1]:
+            ls[pos]=ls[i]
+            pos+=1
+    return pos
+print(dup([1,2,2,3]))
 
 
 # In[3]:
@@ -33,23 +32,23 @@ def remove_dup_sorted(A):
 remove_dup_sorted([1,3,3,5,6])
 
 
-# In[16]:
+# In[2]:
 
 
-def remove_dup_sorted(A):
-    if not A:
-        return 0
-    newTail=0
-    for i in range(1,len(A)):
-        print("start A[i] : {}".format(A[i]))
-        print("A[newTail] : {}".format(A[newTail]))
-        print("newTail :{} ".format(newTail))
-        print("i :{}".format(i))
-        print("end A[i] != A[newTail] {}".format(A[i] != A[newTail]))
-        if A[i] != A[newTail]:
-            newTail +=1
-            A[newTail]=A[i]
-    return newTail +1
+def dup(ls):
+    pos=1
+    for i in range(1,len(ls)):
+        print("i",i)
+        if ls[i]!=ls[i-1]:
+            ls[pos]=ls[i]
+            print("pos",pos)
+            print("ls[i]",ls[i])
+            print("ls[i-1]",ls[i-1])
+            print("ls[pos]",ls[pos])
+            pos+=1
+    return pos
+print(dup([1,2,2,3]))
+        
 
 
 # In[17]:
