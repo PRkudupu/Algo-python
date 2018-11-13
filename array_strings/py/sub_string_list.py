@@ -37,14 +37,26 @@ def sub(s1,s2):
 print(sub("sam","I am sam"))
 
 
-# In[25]:
+# In[4]:
+
+
+def sub(sub,st):
+    words=st.split()
+    for w in words:
+        if w == sub:
+            return True
+    return False
+
+print(sub("sam","I am sam"))
+
+
+# In[5]:
 
 
 def sub(s1,s2):
     sub_str=len(s1)
     main_str=len(s2)
     out_loop=main_str-sub_str+1
-    
     for i in range(out_loop):
         for j in range(sub_str):
             if s2[i+j] != s1[j]:
@@ -52,7 +64,32 @@ def sub(s1,s2):
             if j+1 == sub_str:
                 return True
     return False
-print(sub("sam","I am sam"))            
+print(sub("sam","I am sam")) 
+
+
+# In[4]:
+
+
+def sub(s1,s2):
+    sub_str=len(s1)
+    main_str=len(s2)
+    out_loop=main_str-sub_str+1
+    print("sub_str",sub_str)
+    print("main_str",main_str)
+    print("out_loop",out_loop)
+  
+    for i in range(out_loop):
+        for j in range(sub_str):
+            print("s2[i+j]",s2[i+j])
+            print("s1[j]",s1[j])
+            print("j+1",j+1)
+            print("sub_str",sub_str)
+            if s2[i+j] != s1[j]:
+                break;
+            if j+1 == sub_str:
+                return True
+    return False
+print(sub("sam","I am sam"))   
 
 
 # In[ ]:
