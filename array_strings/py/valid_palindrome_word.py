@@ -7,7 +7,7 @@
 # 2) Input <b>"boib"</b> return <b>False</b>
 # 
 
-# In[5]:
+# In[2]:
 
 
 def isPalindrome(s):
@@ -15,6 +15,22 @@ def isPalindrome(s):
         return True
     else:return False
 isPalindrome("bob")
+
+
+# In[4]:
+
+
+def valid_palindrome(input):
+    first =0
+    last =len(input)
+    while first <=last:
+        if input[first].lower() != input[last-1].lower():
+            return False
+        first +=1
+        last -=1
+    return True
+valid_palindrome("boB")
+   
 
 
 # In[ ]:
