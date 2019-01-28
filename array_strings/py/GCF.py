@@ -7,13 +7,13 @@
 # 
 # <b> return: 9 </b>
 # 
-#         
+# 
 
-# #### Loops
-
-# In[14]:
+# In[1]:
 
 
+# Get the smallest of the both inputs
+# Loop through the find the GCD#
 def gcd(x,y):
     small=min(x,y)
     for i in range(1,small+1):
