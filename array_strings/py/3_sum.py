@@ -125,6 +125,27 @@ def three_sum_n(arr,target):
 print(three_sum_n([-8,-7,5,2],0))
 
 
+# In[1]:
+
+
+def three_sum(nums,ans):
+    for i in range(0,len(nums)-1):
+        s=set()
+        cur_sum= ans-nums[i]
+        print("nums[i]",nums[i])
+        for j in range(i+1,len(nums)):
+            if (cur_sum - nums[j]) in s:
+                print("ans",ans)
+                print("nums[j]",nums[j])
+                print("cur_sum",cur_sum)
+                print("cur_sum - nums[j]",cur_sum - nums[j])
+                return (nums[i],nums[j],cur_sum-nums[j])
+            s.add(nums[j])
+            print(s)
+    return False              
+print(three_sum([3,2,2,1],7))
+
+
 # In[ ]:
 
 
