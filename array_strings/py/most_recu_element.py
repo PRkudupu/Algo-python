@@ -8,40 +8,28 @@
 # Expected output : <b>"s"</b>
 # 
 
+# In[3]:
+
+
+#Store the max count in a varible
+#when max count changes add the character to the dictionary
+def n_repeat(s):
+    dic   ={}
+    m_max = 0 
+    m_elem = ""
+    for ch in s:
+        if ch in dic.keys():
+            continue
+        else:
+            if m_max < s.count(ch):
+                m_max = s.count(ch)
+                dic['max']=ch
+    return dic['max']      
+print(n_repeat("geekgeeks"))
+
+
 # In[ ]:
 
 
-def max_oc(s):
-    dic = {}
-    max_oc=0
-    for i in range(len(s)):
-        if s[i] in dic:
-            continue
-        else:
-            count =s.count(s[i])
-            dic[s[i]] =count
-            if count > max_oc:
-                max_oc=count
-    return max_oc
-print(max_oc("sssaa"))
 
-
-# In[11]:
-
-
-def max_oc(s):
-    dic = {}
-    max_oc=0
-    for i in range(len(s)):
-        print("dic",dic)
-        if s[i] in dic:
-            continue
-        else:
-            count =s.count(s[i])
-            dic[s[i]] =count
-            if count > max_oc:
-                max_oc=count
-                dic['max'] =s[i]
-    return dic['max']
-print(max_oc("sssaa"))
 
