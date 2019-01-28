@@ -14,9 +14,10 @@
 # #### Input : s1 = "prathap", s2 = "I am sam"
 # Output : False.
 
-# In[ ]:
+# In[3]:
 
 
+#Note this solution would not take care of lower and upper case and spaces.
 def sub(s1,s2):
     if s1 in s2:
         return True
@@ -26,9 +27,10 @@ print(sub("sam","I am sam"))
     
 
 
-# In[13]:
+# In[5]:
 
 
+#Note this solution would not take care of lower and upper case and spaces.
 def sub(s1,s2):
     if s2.find(s1) != -1:
         return True
@@ -37,17 +39,17 @@ def sub(s1,s2):
 print(sub("sam","I am sam"))
 
 
-# In[4]:
+# In[1]:
 
 
-def sub(sub,st):
-    words=st.split()
+#Note this solution would take care of lower and upper case and spaces.
+def sub_str(m_str,s_str):
+    words = m_str.split()
     for w in words:
-        if w == sub:
+        if w.lower() == s_str.strip().lower():
             return True
     return False
-
-print(sub("sam","I am sam"))
+print(sub_str("my name is prathap"," prathap"))
 
 
 # In[5]:
