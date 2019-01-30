@@ -29,12 +29,12 @@ print(m)
 # ## Time Complexity O(n)
 # ## Space Complexity 0(1)
 
-# In[3]:
+# In[2]:
 
 
 def buy_sell_once_ef(ls):
     max_profit=0
-    min_price=stocks[0]
+    min_price=ls[0]
     for price in range(len(ls)-1):
         min_price = min(min_price,ls[price])
         profit    = ls[price]-min_price
