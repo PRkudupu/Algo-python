@@ -48,6 +48,22 @@ def mx(ls):
 print(mx([1,500,10,20000]))       
 
 
+# In[2]:
+
+
+def r_max(ls):
+    head=0
+    tail=len(ls)-1
+    max_num=0
+    while head <= tail:
+        max_cur=max(ls[head],ls[tail])
+        max_num=max(max_cur,max_num)
+        head+=1
+        tail-=1
+    return max_num
+print(r_max([1,500,10,20000]))
+
+
 # In[ ]:
 
 
