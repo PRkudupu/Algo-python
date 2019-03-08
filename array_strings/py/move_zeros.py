@@ -27,25 +27,24 @@ def move_zeros(nums):
 move_zeros(ar)   
 
 
-# In[2]:
+# In[1]:
 
 
-# move
-def move_zeros(nums):
+def mov_zeros(ls):
     last0=0
-    for i in range(0,len(nums)):
-        if(nums[i]!=0):
-            print("i",i)
-            print("nums[i]",nums[i])
-            print("nums[last0]",nums[last0])
-            print("[last0]",last0)
-            nums[i],nums[last0]=nums[last0],nums[i]
-            print("after nums[i]",nums[i])
-            print("after nums[last0]",nums[last0])
-            print("nums",nums)
-            last0+=1
-    return nums
-print(move_zeros([0,1,0,10]))
+    for i in range(0,len(ls)):
+        print("loop",ls[i])
+        if ls[i] !=0:
+            print(ls[i])
+            print(ls[last0])
+            print("before",ls)
+            ls[i],ls[last0]=ls[last0],ls[i]
+            print("after",ls)
+            last0 +=1
+            print("last0",last0)
+    return ls
+
+print(mov_zeros([0,0,10,20]))
 
 
 # In[ ]:
