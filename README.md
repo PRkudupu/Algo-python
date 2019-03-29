@@ -17,4 +17,3 @@ Algo-python is released under the MIT license:
  <a href="https://opensource.org/licenses/MIT">opensource.org/licenses/MIT</a>.
 
 
-
