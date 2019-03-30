@@ -1,7 +1,7 @@
 # Algo-python
 ![alt text](gospel-of-algorithms.png)
 ## Introduction
-This project has the list of common interview alogrithms asked in bay area.They are written using python in jupyter notebook. Each algorithm has questions with the expected input and output. The solution is in ipynb file and py file along with debug information.My aim is to help software engineers to have a common repository, using which they can easily prepare for these interviews and get a successful job offer. 
+This project has the list of common interview alogrithms asked in bay area.They are written using python in jupyter notebook. Each algorithm has questions with the expected input and output. The solution is in ipynb file and py file along with debug information.These collection of algorithms has been collected from various sourcces like leetcode etc.My aim is to help software engineers to have a common repository, using which they can easily prepare for these interviews and get a successful job offer. 
 ### Installation
 <table>
       <tr>
