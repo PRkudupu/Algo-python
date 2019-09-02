@@ -13,6 +13,19 @@
 # return [0, 1].
 #  
 
+# In[3]:
+
+
+def twosum(ls,k):
+    for i in range(len(ls)):
+        for j in range(i+1,len(ls)):
+            if ls[i]+ls[j] == k:
+                return i,j
+    return False
+num=[2,7,11,15]    
+print(twosum(num,9))
+
+
 # In[14]:
 
 
@@ -29,7 +42,13 @@ num=[2,7,11,15]
 twosum(num,9)
 
 
-# In[33]:
+# In[ ]:
+
+
+
+
+
+# In[6]:
 
 
 def twosum(num,target):
@@ -39,16 +58,13 @@ def twosum(num,target):
     for i in range(len(num)):
         print("i",i)
         print("num[i]",num[i])
+        print("dic",dic)
         if(num[i] in dic):
-            print("inside if")
-            print([dic[num[i]],i])
             return [dic[num[i]],i]
         else:
-            print("inside else")
-            print("sub {}".format(target-num[i]))
             dic[target -num[i]] = i
-num=[2,7,11,15]    
-twosum(num,9)
+num=[2,3,3]    
+twosum(num,6)
 
 
 # In[25]:
