@@ -8,14 +8,21 @@
 # 
 # 
 
-# In[6]:
+# In[2]:
 
 
 def avg(inp):
     total=0
-    word=inp.split(" ")
+    # to remove the leading and the trailing space, we use strip
+    word=inp.strip().split(" ")
     for i  in range(len(word)):
         total += len(word[i])
     return total / len(word)
-avg("my my my")
+avg(" my my my")
+
+
+# In[ ]:
+
+
+
 
