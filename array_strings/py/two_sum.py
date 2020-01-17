@@ -11,6 +11,10 @@
 # 
 # Because nums[0] + nums[1] = 2 + 7 = 9,
 # return [0, 1].
+# 
+# <b>Solution</b>
+# <br>2+2=4 <br>
+# 4-2=2
 #  
 
 # In[3]:
