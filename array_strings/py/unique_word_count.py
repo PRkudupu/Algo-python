@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[2]:
+# In[ ]:
 
 
 def uniq(ls):
@@ -14,4 +14,18 @@ def uniq(ls):
             dic[w]=ls.count(w)
     return dic
 print(uniq("my my name prathap"))
+
+
+# In[2]:
+
+
+#Wecan word count from list using count as shown below
+test="my my name is prathap"
+print(test.count("my"))
+
+
+# In[ ]:
+
+
+
 

@@ -3,18 +3,18 @@
 
 # ### Smallest postive number
 
-# In[6]:
+# In[4]:
 
 
-def small_p(ls):
-    sm_pos=0
-    for num in ls:
-        if num >=0:
-            if num > sm_pos:
-                sm_pos=num
-    return sm_pos
-        
-print(small_p([1,-2,2,10-20]))       
+# smallest positive number
+def sm_num(ls):
+    sm=ls[0]
+    for i in ls:
+        if i >=0:
+            sm=min(sm,i)
+    return sm
+
+print(sm_num([1,-2,2,10-20]))      
 
 
 # In[ ]:
