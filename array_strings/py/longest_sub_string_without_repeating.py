@@ -20,13 +20,14 @@
 # Explanation: The answer is "wke", with the length of 3. 
 #              Note that the answer must be a substring, "pwke" is a subsequence and not a substring.
 
-# In[12]:
+# In[15]:
 
 
 def long_sub_string(ls):
     sub_set =""
     dic ={}
     s = set()
+    maxi=0
     for i in ls:
         if i not in s:
             s.add(i)
@@ -37,15 +38,13 @@ def long_sub_string(ls):
             sub_set =sub_set+i
             s=set()
             s.add(i)
-    dic[sub_set]=len(sub_set)
-    for y in dic.values():
-        maxi=0
-        return max(maxi,y)
-    return dic
-print(long_sub_string('abcdabc'))
+        dic[sub_set]=len(sub_set)
+        maxi=max(maxi,dic[sub_set])
+    return maxi
+print(long_sub_string('pwwkew'))
 
 
-# In[13]:
+# In[9]:
 
 
 def lengthOfLongestSubstring(s):
@@ -56,12 +55,14 @@ def lengthOfLongestSubstring(s):
             if s[i] in usedChar and start <= usedChar[s[i]]:
                 start = usedChar[s[i]] + 1
             else:
+                # Here i-strat is where we are removing the index from previous sub string
+                # +1 is added as index starts from 0
                 maxLength = max(maxLength, i - start + 1)
 
             usedChar[s[i]] = i
 
         return maxLength
-print(lengthOfLongestSubstring('abcdabc'))
+print(lengthOfLongestSubstring('abcdakujgbna'))
 
 
 # In[1]:
