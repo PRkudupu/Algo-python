@@ -21,17 +21,17 @@
 # Explanation: 2 does not exist in nums so return -1
 #  
 
-# In[2]:
+# In[1]:
 
 
 def search(nums, target):
-    l, r = 0, len(nums) - 1
-    while l <= r:
-        mid = (l + r) // 2
+    head, tail = 0, len(nums) - 1
+    while head <= tail:
+        mid = (head + tail) // 2
         if nums[mid] < target:
-            l = mid + 1
+            head = mid + 1
         elif nums[mid] > target:
-            r = mid - 1
+            tail = mid - 1
         else:
             return mid
     return -1
