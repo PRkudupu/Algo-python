@@ -111,6 +111,30 @@ def add_binary(a,b):
 print(add_binary('10','110'))
 
 
+# <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">Here the <span style="color: #007020">input</span> <span style="color: #000000; font-weight: bold">is</span> more adapted to push towards Approach <span style="color: #0000DD; font-weight: bold">1</span>, but there <span style="color: #000000; font-weight: bold">is</span> popular Facebook variation of this problem when interviewer provides you two numbers <span style="color: #000000; font-weight: bold">and</span> asks to <span style="color: #007020">sum</span> them up without using addition operation<span style="color: #333333">.</span>
+# 
+# No addition<span style="color: #FF0000; background-color: #FFAAAA">?</span> OK, bit manipulation then<span style="color: #333333">.</span>
+# 
+# How to start<span style="color: #FF0000; background-color: #FFAAAA">?</span> There <span style="color: #000000; font-weight: bold">is</span> an interview tip <span style="color: #008800; font-weight: bold">for</span> bit manipulation problems: <span style="color: #008800; font-weight: bold">if</span> you don<span style="background-color: #fff0f0">&#39;t know how to start, start from computing XOR for your input data. Strangely, that helps to go out for quite a lot of problems, Single Number II, Single Number III, Maximum XOR of Two Numbers in an Array, Repeated DNA Sequences, Maximum Product of Word Lengths, etc.</span>
+# 
+# Here XOR <span style="color: #000000; font-weight: bold">is</span> a key <span style="color: #008800; font-weight: bold">as</span> well, because it<span style="background-color: #fff0f0">&#39;s a sum of two binaries without taking carry into account.</span>
+# 
+# </div>
+# 
+
+# In[10]:
+
+
+def addBinary(a, b) -> str:
+        x, y = int(a, 2), int(b, 2)
+        while y:
+            answer = x ^ y
+            carry = (x & y) << 1
+            x, y = answer, carry
+        return bin(x)[2:]
+print(addBinary('001','101'))
+
+
 #  def addBinary( a, b):
 #             if len(a)==0: return b
 #             if len(b)==0: return a
