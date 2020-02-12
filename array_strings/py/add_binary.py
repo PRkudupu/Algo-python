@@ -15,19 +15,126 @@
 # Output: "10101"
 # 
 
-# In[1]:
+# In[ ]:
 
 
-def addBinary( a, b):
-           if len(a)==0: return b
-           if len(b)==0: return a
-           if a[-1] == '1' and b[-1] == '1':
-               return addBinary(addBinary(a[0:-1],b[0:-1]),'1')+'0' 
-           if a[-1] == '0' and b[-1] == '0':
-               return addBinary(a[0:-1],b[0:-1])+'0'
-           else:
-               return addBinary(a[0:-1],b[0:-1])+'1'
+def add_binary(a,b):
+    return '{0:b}'.format(int(a, 2) + int(b, 2))
 
+print(add_binary('11','11'))
+
+
+# This method has quite low performance in the case of large input numbers.
+# 
+# One could use Bit Manipulation approach to speed up the solution.
+
+#    ### Logic
+#    ![title](image/add_binary.png)
+#    
+#    ![title](image/op_addbinary.jpg)
+
+# #### 1.Find the maxlength
+# #### 2.Based on the length fill with zero
+# #### 3.Create a variable for carry and result
+# #### 4.Loop through tail, check if value is "1" .If yes then increment carry
+# #### 5.if Carry % 2 == 1 then append 1 else zero
+# #### 6. Divide carry by 2 (Keep doing this for all the elements in the array)
+# #### 7. Outside the loop if carry is 1 then append 1
+# #### 8. Reverse the string and join all the values
+# 
+
+# In[15]:
+
+
+# Program with comments
+def add_binary(a,b):
+    n = max(len(a), len(b))
+    print('\nlength',n)
+    a, b = a.zfill(n), b.zfill(n)
+    print('zfill a,b',a,b)
+    carry = 0
+    result = []
+    for i in range(n - 1, -1, -1):
+        print('\ni',i)
+        print('carry on top',carry)
+        if a[i] == '1':
+            carry += 1
+        if b[i] == '1':
+            carry += 1
+
+        if carry % 2 == 1:
+            result.append('1')
+        else:
+            result.append('0')
+        print('\a[i]',a[i])
+        print('\b[i]',b[i])
+        print('carry after increement',carry)
+        print('carry % 2',carry % 2)
+        print('answer',result)
+        #carry =cary//2
+        print("Carry=carry// 2", carry)
+        carry //= 2
+        print("After division carry", carry)
+    if carry == 1:
+        result.append('1')
+        print('result',result)
+    result.reverse()
+
+    return ''.join(result)
+print(add_binary('01','11'))
+
+
+# In[13]:
+
+
+# Program without comments
+def add_binary(a,b):
+    n = max(len(a), len(b))
+    a, b = a.zfill(n), b.zfill(n)
+    carry = 0
+    result = []
+    for i in range(n - 1, -1, -1):
+        if a[i] == '1':
+            carry += 1
+        if b[i] == '1':
+            carry += 1
+
+        if carry % 2 == 1:
+            result.append('1')
+        else:
+            result.append('0')
+        carry //= 2
+    if carry == 1:
+        result.append('1')
+    result.reverse()
+    return ''.join(result)    
+print(add_binary('10','110'))
+
+
+# ![title](image/bit_man.jpg)
+
+# In[10]:
+
+
+def addBinary(a, b) -> str:
+        x, y = int(a, 2), int(b, 2)
+        while y:
+            answer = x ^ y
+            carry = (x & y) << 1
+            x, y = answer, carry
+        return bin(x)[2:]
+print(addBinary('001','101'))
+
+
+#  def addBinary( a, b):
+#             if len(a)==0: return b
+#             if len(b)==0: return a
+#             if a[-1] == '1' and b[-1] == '1':
+#                 return addBinary(addBinary(a[0:-1],b[0:-1]),'1')+'0' 
+#             if a[-1] == '0' and b[-1] == '0':
+#                 return addBinary(a[0:-1],b[0:-1])+'0'
+#             else:
+#                 return addBinary(a[0:-1],b[0:-1])+'1'
 
 # In[2]:
 
