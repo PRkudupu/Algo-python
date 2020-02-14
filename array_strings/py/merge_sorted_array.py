@@ -86,6 +86,12 @@ def merge_sorted_array(ls1,m,ls2,n):
     print(merge_sorted_array([1,2,3,0,0,0],3,[2,5,6],3))
 
 
+# <b>Complexity Analysis</b>
+# 
+# Time complexity : \mathcal{O}(n + m)O(n+m). <br>
+# Space complexity : \mathcal{O}(m)O(m).
+# 
+
 # In[12]:
 
 
@@ -182,6 +188,69 @@ print(merge_sorted_array([1,2,3,0,0,0],3,[2,5,6],3))
 #nums1[:] = sorted(nums1[:m] + nums2)
                 
                 
+
+
+# #### Approach 3 : Two pointers / Start from the end
+# Intuition
+# 
+# Approach 2 already demonstrates the best possible time complexity \mathcal{O}(n + m)O(n+m) but still uses an additional space. This is because one has to keep somewhere the elements of array nums1 while overwriting it starting from the beginning.
+# ![](image/end.jpg)
+
+# In[18]:
+
+
+def merge_sorted_array(ls1, m, ls2, n):
+        # two get pointers for nums1 and nums2
+        p1 = m - 1
+        p2 = n - 1
+        # set pointer for nums1
+        p = m + n - 1
+        
+        # while there are still elements to compare
+        while p1 >= 0 and p2 >= 0:
+            if ls1[p1] < ls2[p2]:
+                ls1[p] = ls2[p2]
+                p2 -= 1
+            else:
+                ls1[p] =  ls1[p1]
+                p1 -= 1
+            p -= 1
+        
+        # add missing elements from nums2
+        ls1[:p2 + 1] = ls2[:p2 + 1]
+        return ls1
+print(merge_sorted_array([1,2,3,0,0,0],3,[2,5,6],3))
+
+
+# In[19]:
+
+
+def merge_sorted_array(ls1, m, ls2, n):
+        # two get pointers for nums1 and nums2
+        p1 = m - 1
+        p2 = n - 1
+        # set pointer for nums1
+        p = m + n - 1
+        
+        # while there are still elements to compare
+        while p1 >= 0 and p2 >= 0:
+            print('ls1[p1]',ls1[p1])
+            print('ls2[p2]',ls2[p2])
+            print('ls1[p1] < ls2[p2]',ls1[p1] < ls2[p2])
+
+            if ls1[p1] < ls2[p2]:
+                ls1[p] = ls2[p2]
+                p2 -= 1
+            else:
+                ls1[p] =  ls1[p1]
+                p1 -= 1
+            p -= 1
+            print('ls1',ls1)
+        
+        # add missing elements from nums2
+        ls1[:p2 + 1] = ls2[:p2 + 1]
+        return ls1
+print(merge_sorted_array([1,2,3,0,0,0],3,[2,5,6],3))
 
 
 # In[5]:
