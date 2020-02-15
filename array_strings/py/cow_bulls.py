@@ -60,6 +60,17 @@ def bull_cow(sec,act):
 print(bull_cow('1123','0111'))
 
 
+# In[6]:
+
+
+from collections import Counter
+def bull_cow(sec,act):
+    s, g = Counter(sec), Counter(act)
+    a = sum(i == j for i, j in zip(sec, act))
+    return '%sA%sB' % (a, sum((s & g).values()) - a)
+print(bull_cow('1123','0111'))
+
+
 # In[ ]:
 
 
