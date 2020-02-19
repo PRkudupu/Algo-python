@@ -5,24 +5,27 @@
 # 
 # Example 1:
 # 
-# Input: "abcabcbb"
+# <b>Input: "abcabcbb"</b>
 # Output: 3 
 # Explanation: The answer is "abc", with the length of 3. 
 # Example 2:
 # 
-# Input: "bbbbb"
+# <b>Input: "bbbbb"</b>
 # Output: 1
 # Explanation: The answer is "b", with the length of 1.
 # Example 3:
 # 
-# Input: "pwwkew"
+# <b>Input: "pwwkew"</b>
 # Output: 3
 # Explanation: The answer is "wke", with the length of 3. 
 #              Note that the answer must be a substring, "pwke" is a subsequence and not a substring.
 
-# In[15]:
+# ![](images/longsub)
+
+# In[16]:
 
 
+#BRUTEFORCE
 def long_sub_string(ls):
     sub_set =""
     dic ={}
@@ -44,31 +47,35 @@ def long_sub_string(ls):
 print(long_sub_string('pwwkew'))
 
 
-# In[9]:
+# ![title](image/longsub.jpg)
+
+# In[2]:
 
 
 def lengthOfLongestSubstring(s):
         start = maxLength = 0
-        usedChar = {}
+        dic = {}
         
         for i in range(len(s)):
-            if s[i] in usedChar and start <= usedChar[s[i]]:
-                start = usedChar[s[i]] + 1
+            if s[i] in dic and start <= dic[s[i]]:
+                start = dic[s[i]] + 1
             else:
                 # Here i-strat is where we are removing the index from previous sub string
                 # +1 is added as index starts from 0
                 maxLength = max(maxLength, i - start + 1)
 
-            usedChar[s[i]] = i
+            dic[s[i]] = i
 
         return maxLength
 print(lengthOfLongestSubstring('abcdakujgbna'))
 
 
-# In[1]:
+# In[18]:
 
 
+#WITH PRINT
 def len_longest_sub(ls):
+    #start is used to track new substring. We increement start when duplicate is found
     start = maxLength = 0
     dic = {}
     for i in range(len(ls)):
@@ -77,16 +84,16 @@ def len_longest_sub(ls):
             start = dic[ls[i]] + 1
         else:
             print("else")
+            # I is the current pointer and start is the previous sub string.
+            # since i starts from 0 we need to increement by 1
             maxLength = max(maxLength, i - start + 1)
         dic[ls[i]] = i
         print("\ni ->",i)
-        print("ls[i]",ls[i])
-        print("start ->",start)
-        print("dic[ls[i]] ->",dic[ls[i]])
+        print("start <= dic[ls[i]]",start ,dic[ls[i]])
         print("dic ->",dic)
         print("maxlength",maxLength)
     return maxLength
-print(len_longest_sub("ababcabcd"))
+print(len_longest_sub("abadbc"))
 
 
 # In[ ]:
