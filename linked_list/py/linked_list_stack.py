@@ -6,10 +6,10 @@
 # Since we'll be implementing a linked list for this, we know that we'll need a `Node` class like we used earlier in this lesson.
 # 
 
-# In[3]:
+# In[1]:
 
 
-# Add the Node class here
+#Node class
 class Node:
     def __init__(self,value):
         self.value=value
