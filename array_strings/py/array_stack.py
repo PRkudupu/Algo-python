@@ -61,7 +61,7 @@ print("Pass" if foo.arr == [0, 0, 0, 0, 0, 0, 0, 0, 0, 0] else "Fail")
 # * Once you've added the value, you'll want to increment both `next_index` and `num_elements`
 
 # In[4]:
-
+# This is class for stack
 
 class Stack:
     
