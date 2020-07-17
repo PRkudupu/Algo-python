@@ -1,0 +1,85 @@
+    /*
+    RETAILER            MERCHANDIZE
+    Sears               shoe, ring, pan, shirt
+    Walmart             ring, pan, hat, meat
+    Target              shoe, pan, shirt, hat
+   
+    Return the unique item that only one store has.  Also return the name of that store.
+   
+    Output:
+    Unique item is: meat
+    Store name:  Walmart.
+    */  
+         key    value
+   1 dic key =  "Merchandis" 
+         Key 
+   
+   ls=[{"retailer":"Sears","merchandize":"shoe, ring, pan, shirt" },{"retailer":"Walmart","merchandize":"ring, pan, hat, meat" },{"retailer":"Walmart","merchandize":"shoe, pan, shirt, hat"}
+   Target
+    ]
+   
+    def unique(ls):
+        ls_spear =[]
+        ls_walmart =[]
+        ls_Target =[]
+         
+         for i in range(len(ls,param)):
+            for key,value in ls[i].items():
+                #seperarte walmart,sears,target
+                 if key == 'retailer' and  value ='Sears':
+                     row=ls[i]
+                     ls_spear =row["merchandize"]
+                 if key == 'retailer' and  value ='walmart':
+                     row=ls[i]
+                     ls_walmart =row["merchandize"]
+                 if key == 'retailer' and  value ='Sears':
+                 row=ls[i]
+                     ls_Target =row["merchandize"] 
+                
+                 for j in  ls_spear
+                 
+                      
+ """ls=[{"retailer":"Sears","merchandize":"shoe, ring, pan, shirt" },{"retailer":"Walmart","merchandize":"ring, pan, hat, meat" },{"retailer":"Target","merchandize":"shoe, pan, shirt, hat"}
+   ]"""
+
+ls ={ "Sears" :"shoe, ring, pan, shirt",
+      "Walmart" :"ring, pan, hat, meat",
+      "Target":"shoe, pan, shirt, hat"
+    }
+  
+def unique(ls,param):
+    s=set()
+    row=[]
+    wal_values= []
+    for key,value in ls.items():
+        if key == param:
+            wal_values= value
+    for values in ls.values():
+        s.add(values)
+    print(s)
+print(unique(ls,'Walmart'))
+                                  
+   
+
+ls ={ "Sears":"shoe, ring, pan, shirt",
+     "Walmart":"ring, pan, hat, meat" ,
+      "Target":"shoe, pan, shirt, hat"}
+  
+def unique(ls):
+    dic={}
+    row=[]
+    for key, values in ls.items():
+        for ch in values.split():
+            row.append(key +":"+ ch)
+    #print(row)
+    for ch in row:
+        if ch in dic:
+            continue
+        else:
+             if row.count(ch) == 1:
+                return ch
+             else:
+                dic[ch]=row.count(ch)
+    return None        
+print(unique(ls))   
+     
