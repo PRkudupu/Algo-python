@@ -8,23 +8,38 @@
 #      <b> - output array: </b> [1,1,2,3,3,3,5,5]<br> 
 #     Ensure you take care of case input[None] which means None object.<br>
 
-# In[1]:
+# In[43]:
 
 
-def repalce_none(ls):
-    prev =0
-    if len(ls) ==1 and ls[0]==None:
+def replace_none(ls):
+    prev = None
+    # if input parameter is none return none
+    if ls is None:
         return None
-    for i in  range(len(ls)):
-        if i > 0:
-            prev=ls[i-1]
-        if ls[i]== None:
-            ls[i]=prev
+    #If array is empty return None
+    if not ls:
+        return []
+    for i in range(len(ls)):
+        if ls[0] is None:
+            ls[0] = None
+        #condition is true when ch is not none
+        if ls[i]:
+            prev = ls[i]
+        #condition is true when ch is none
+        else:
+            ls[i] = prev
     return ls
 
-ls_1=[1,None,2,3,None,None,5,None]
-ls_2=[None]
-print(repalce_none(ls_1))
+
+# In[44]:
+
+
+assert replace_none(None) == None
+assert replace_none([]) == []
+assert replace_none([None,8,None]) == [None,8,8]
+assert replace_none([1,None,2]) == [1,1,2]
+assert replace_none([5,None,None]) == [5,5,5]
+assert replace_none([1,None,2,3,None,None,5,None]) == [1,1,2,3,3,3,5,5]
 
 
 # In[ ]:
